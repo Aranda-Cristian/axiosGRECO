@@ -33,13 +33,17 @@ const autorejemplo = [
     }
 ];
 export default function Autores() {
+    const eliminar = (autor_id) => {}
+    const guardar = (datos) => {}
     return(
         <div className="Seccion" style={{backgroundColor: 'lightcyan'}}>
             <FormularioAutores
+            guardar={(datos) => guardar(datos)}
             
             />
             <ListadoAutores
             autores={autorejemplo}
+            eliminar={(autor_id) => eliminar(autor_id)}
             />
         </div>
     )

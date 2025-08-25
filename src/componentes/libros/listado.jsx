@@ -1,7 +1,28 @@
-export default function ListadoLibros(){
+function TarjetaLibro({titulo, isbn, generos, sinopsis, autor, eliminar}) {
+    return(
+        <div className='Tarjeta'>
+            <span className="Eliminar" onClick={() => eliminar()}>X</span>
+            <span> {isbn} {titulo}</span>
+            <span> {generos}</span>
+            <span> {sinopsis}</span>
+            <span> {autor.apellido}, {autor.nombre}</span>
+        </div>
+    )
+}
+export default function ListadoLibros({libros, eliminar}){
     return(
         <div className='Listado' >
-            ListadoLibros
+            {libros.map((libro, index) => 
+                <TarjetaLibro 
+                    key={libro._id} 
+                    titulo={libro.titulo} 
+                    isbn={libro.isbn} 
+                    generos={libro.generos} 
+                    sinopsis={libro.sinopsis} 
+                    autor={libro.autor}
+                    eliminar={() => eliminar(libro._id)} 
+                />
+            )}
 
         </div>
     )
