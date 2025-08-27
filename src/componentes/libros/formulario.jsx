@@ -1,5 +1,5 @@
 import { useState } from "react";
-export default function FormularioLibros({autores}) {
+export default function FormularioLibros({autores, guardarLibro}) {
     const [titulo, setTitulo] = useState("");
     const [autor_id, setAutorId] = useState("");
     const [sinopsis, setSinopsis] = useState("");
@@ -7,6 +7,14 @@ export default function FormularioLibros({autores}) {
     const [generos, setGeneros] = useState("");
     const guardar = (e) => {
         e.preventDefault();
+        const libro ={
+            titulo,
+            isbn,
+            generos,
+            sinopsis,
+            autor_id
+        }
+        guardarLibro(libro)
     }
     return (
         <div className='Formulario' >

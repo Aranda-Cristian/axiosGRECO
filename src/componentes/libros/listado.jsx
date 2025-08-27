@@ -1,3 +1,4 @@
+
 function TarjetaLibro({titulo, isbn, generos, sinopsis, autor, eliminar}) {
     return(
         <div className='Tarjeta'>
